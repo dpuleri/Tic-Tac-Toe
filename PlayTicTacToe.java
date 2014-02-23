@@ -42,5 +42,10 @@ public class PlayTicTacToe {
             }
         }
         System.out.println(board);
+        String winner = board.getWinner();
+        if (winner.equals(" ")) {
+            winner = "Cat";
+        }
+        System.out.printf("%s has won.%n", winner);
     }
 }
