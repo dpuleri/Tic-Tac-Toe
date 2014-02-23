@@ -1,6 +1,8 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.HashSet;
+import java.util.Random;
 public class ComputerPlayer {
     private HashSet<Integer> set;
     private TicBoard ticBoard;
@@ -112,8 +114,10 @@ public class ComputerPlayer {
         return new int[]{i, j, 1};
     }
     private int[] getSide() {
-        Iterator iter = set.iterator();
-        int next = (int) iter.next();
+        Random rand = new Random();
+        //get random move
+        ArrayList<Integer> tempList = new ArrayList<Integer>(set);
+        int next = tempList.get(rand.nextInt(tempList.size()));
         int i = next / 3;
         int j = next % 3;
         int[] out = new int[]{i, j};
